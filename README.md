@@ -43,14 +43,16 @@ Module to save state for teraslice processes.  Currently uses elasticsearch for 
 * __get__ - expects an object with the `id_field` as a property and returns an object with an id and saved fields  
   example: `get(doc)`
 
-* __mget__ - expects an array of objects and returns an object  
+* __mget__ - expects an array of objects and returns an object.  Returns a promise and the data returned is an object.  
   example: `mget(docArray)`
 
 * __set__ - expects and object, boolean is optional. Updates state with an option to save state in storage  
+  Returns a promise.  
   example: `set(doc)`  
   example: `set(doc, true)` - saves the state in storage
 
 * __mset__ - expects an array of objects boolean is optional.  Updates state with an option to save state in storage.  
+  Returns a promise.  
   example: `mset(docArray)`  
   example: `mset(docArray, true)` - saves the state in storage
 
