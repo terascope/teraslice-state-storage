@@ -1,4 +1,4 @@
-# teraslice state storage
+# teraslice state storage - currently experimental
 
 Module to save state for teraslice processes.  Currently uses elasticsearch for state persistance and lru-caching to reduce network calls.  Requires job context for connection details and config object which is passed from the _op in the teraslice job.
 
@@ -6,9 +6,10 @@ Module to save state for teraslice processes.  Currently uses elasticsearch for 
 ### Installation
 > Installation TBD
 ### Usage
-> `const storage = require('teraslice-state-storage');`  
-> `storage.count();`  
-> `storage.mset(docArray);`  
+> `const StateStorage = require('teraslice-state-storage');`  
+> `const stateStorage = new StateStorage(context, config);`  
+> `stateStorage.count();`  
+> `stateStorage.mset(docArray);`  
 
 ## Configuration Options:
   * __cache_limit__ - max number of items to store in the cache (not memory size)  
