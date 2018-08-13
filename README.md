@@ -36,7 +36,7 @@ Module to save state for teraslice processes.  Currently uses elasticsearch for 
   * __id_field__ - specifies the field to use as the key for caching and retrieving docs from elasticsearch  
   string, default: 'id'
   
-  * __persist__ - If set to true will save state in storage for set or mset.  
+  * __persist__ - If set to true will save state in storage for mset, doest not apply to set.  
   boolean, default: false
 
 ## Functions:

@@ -5,7 +5,6 @@ const StateStorage = require('../lib/es-cache-state-storage');
 
 let mgetData;
 let getData;
-let indexData;
 let bulkData;
 
 const context = {
@@ -13,11 +12,7 @@ const context = {
         apis: {
             elasticsearch: () => ({
                 mget: () => Promise.resolve(mgetData),
-                get: () => Promise.resolve(getData),
-                indexWithId: (request) => {
-                    indexData = request;
-                    return Promise.resolve();
-                }
+                get: () => Promise.resolve(getData)
             })
         },
         getConnection: () => ({
@@ -77,12 +72,11 @@ describe('es backed cache', () => {
         expect(stateStorage.count()).toBe(1);
     });
 
-    it('set should update storage for doc and persist doc if specified', () => {
+    it('set should update storage for doc no persistance for single doc', () => {
         config.persist = true;
         const stateStorage = new StateStorage(context, config);
         stateStorage.set(doc, true);
         expect(stateStorage.count()).toBe(1);
-        expect(indexData.body).toEqual({ id: 1, data: 'thisIsSomeData' });
     });
 
     it('mset should update storage for many docs and persist doc if specified', () => {
