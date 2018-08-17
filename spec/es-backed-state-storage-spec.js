@@ -93,7 +93,7 @@ describe('es backed cache', () => {
     it('get should return doc state', () => {
         const stateStorage = new StateStorage(context, config);
         stateStorage.set(doc);
-        return stateStorage.get(doc)
+        return stateStorage.get(1)
             .then(result => expect(result).toEqual({ id: 1, data: 'thisIsSomeData' }));
     });
 
@@ -104,7 +104,7 @@ describe('es backed cache', () => {
             .then(result => expect(result).toEqual({ id: '1', data: 'thisIsSomeData' }));
     });
 
-    it('mget should return doc state for docs in cache and es', () => {
+    fit('mget should return doc state for docs in cache and es', () => {
         config.persist = true;
         const stateStorage = new StateStorage(context, config);
         mgetData = {
@@ -114,7 +114,7 @@ describe('es backed cache', () => {
             .then(() => stateStorage.mget(docArray))
             .then((result) => {
                 expect(_.keys(result).length).toBe(3);
-                expect(result['1']).toEqual({ id: '1', data: 'thisIsSomeData' });
+                expect(result['1']).toEqual({ id: '1', data: 'thisIsSomeData', _id: '1' });
             });
     });
 
