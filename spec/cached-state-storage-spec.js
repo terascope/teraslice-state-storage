@@ -39,7 +39,7 @@ describe('lru cached state storage', () => {
     it('get should return data from storage', () => {
         const cache = new CachedStateStorage(config);
         cache.set(doc);
-        const cachedData = cache.get(1);
+        const cachedData = cache.get(doc);
         expect(cachedData).toEqual({ id: 1, data: 'thisIsSomeData' });
     });
 
