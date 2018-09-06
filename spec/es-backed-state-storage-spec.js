@@ -106,6 +106,7 @@ describe('es backed cache', () => {
 
     it('mget should return doc state for docs in cache and es', () => {
         config.persist = true;
+        config.id_field = 'id';
         const stateStorage = new StateStorage(context, config);
         mgetData = {
             docs: createMgetData(docArray.slice(0, 1))
