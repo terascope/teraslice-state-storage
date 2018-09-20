@@ -72,7 +72,7 @@ describe('es backed cache', () => {
         expect(stateStorage.count()).toBe(1);
     });
 
-    it('set should update storage for doc no persistance for single doc', () => {
+    it('set should update storage for doc', () => {
         config.persist = true;
         const stateStorage = new StateStorage(context, config);
         stateStorage.set(doc, true);

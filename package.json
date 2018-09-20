@@ -1,6 +1,6 @@
 {
   "name": "teraslice-state-storage",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "state storage for teraslice assets",
   "main": "index.js",
   "scripts": {
