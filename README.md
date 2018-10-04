@@ -39,6 +39,9 @@ Module to save state for teraslice processes.  Currently uses elasticsearch for 
   * __persist__ - If set to true will save state in storage for mset, doest not apply to set.  
   boolean, default: false
 
+  * __persist_field__ - If persist is true this option is the name of the key field that will be the key in the es bulk update, this may be the same as the id_field but not necessarily.  
+  string, default: 'key'
+
 ## Functions:
 * __get__ - expects an object with the `id_field` as a property and returns an object with an id and saved fields  
   example: `get(doc)`
