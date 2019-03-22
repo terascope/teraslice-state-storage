@@ -1,6 +1,6 @@
 {
   "name": "teraslice-state-storage",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "state storage for teraslice assets",
   "main": "index.js",
   "scripts": {
@@ -9,10 +9,10 @@
   "author": "ciorg",
   "license": "MIT",
   "dependencies": {
-    "@terascope/elasticsearch-api": "^1.0.1",
+    "@terascope/elasticsearch-api": "^2.0.1",
     "bluebird": "^3.5.1",
     "lodash": "^4.17.10",
-    "lru-cache": "^4.1.3"
+    "lru-cache": "^5.1.1"
   },
   "devDependencies": {
     "eslint": "^5.1.0",
