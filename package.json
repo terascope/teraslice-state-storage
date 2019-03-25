@@ -4,7 +4,7 @@
   "description": "state storage for teraslice assets",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine spec/**/*spec.js"
+    "test": "nyc -x spec/ --reporter=text-summary jasmine spec/**/*spec.js && nyc report --reporter=html"
   },
   "author": "ciorg",
   "license": "MIT",
@@ -15,12 +15,15 @@
     "lru-cache": "^5.1.1"
   },
   "devDependencies": {
+    "codecov": "^3.2.0",
     "eslint": "^5.1.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jasmine": "^2.10.1",
     "eslint-plugin-jsx-a11y": "^6.1.0",
-    "jasmine": "^3.1.0"
+    "jasmine": "^3.1.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "nyc": "^13.3.0"
   }
 }
