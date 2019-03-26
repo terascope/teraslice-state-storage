@@ -20,6 +20,6 @@ jobs:
   # tests only on master and on pull-request
   - stage: Tests
     name: Test Packages
-  
+    if: branch = master AND type = pull_request
     script:
         - 'yarn test'
