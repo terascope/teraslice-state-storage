@@ -15,6 +15,9 @@ Module to save state for teraslice processes.  Currently uses elasticsearch for 
   * __cache_limit__ - max number of items to store in the cache (not memory size)  
   positive integer, default: 1000000
 
+  * __max_age__ - length of time before a record expires in milliseconds  
+  positive integer, default: 24 hours
+
   * __connection__ - elasticsearch connection  
    string, default: 'default'
 
