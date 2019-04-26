@@ -22,46 +22,46 @@ stateStorage.mset(docArray);
 
 ## Configuration Options:
 
-  * __cache_limit__ - max number of items to store in the cache (not memory
-    size)
-    positive integer, default: 1000000
+* __cache_limit__ - max number of items to store in the cache (not memory
+  size)
+  positive integer, default: 1000000
 
-  * __chunk_size__ - how many docs to send in the elasticsearch mget request at
-    a time
-    postitive integer, default is 2500
+* __chunk_size__ - how many docs to send in the elasticsearch mget request at
+  a time
+  postitive integer, default is 2500
 
-  * __concurrency__ - number of cuncurrent requests to elasticsearch
-    positive integer, default: 100
+* __concurrency__ - number of cuncurrent requests to elasticsearch
+  positive integer, default: 100
 
-  * __connection__ - elasticsearch connection
-    string, default: 'default'
+* __connection__ - elasticsearch connection
+  string, default: 'default'
 
-  * __index__ - name of elasticsearch index
-    string, default: 'index'
+* __index__ - name of elasticsearch index
+  string, default: 'index'
 
-  * __id_field__ - specifies the field to use as the key for caching and
-    retrieving docs from elasticsearch
-    string, default: 'id'
+* __id_field__ - specifies the field to use as the key for caching and
+  retrieving docs from elasticsearch
+  string, default: 'id'
 
-  * __max_age__ - length of time before a record expires in milliseconds
-    positive integer, default: 24 hours
+* __max_age__ - length of time before a record expires in milliseconds
+  positive integer, default: 24 hours
 
-  * __persist__ - If set to true will save state in storage for mset, doest not
-    apply to set.
-    boolean, default: false
+* __persist__ - If set to true will save state in storage for mset, doest not
+  apply to set.
+  boolean, default: false
 
-  * __persist_field__ - If persist is true this option is the name of the key
-    field that will be the key in the es bulk update, this may be the same as
-    the id_field but not necessarily.
-    string, default: 'key'
+* __persist_field__ - If persist is true this option is the name of the key
+  field that will be the key in the es bulk update, this may be the same as
+  the id_field but not necessarily.
+  string, default: 'key'
 
-  * __save_disposed__ - If set to `true`, records disposed from the cache will
-    saved for later access using the `disposed` property.
+* __save_disposed__ - If set to `true`, records disposed from the cache will
+  saved for later access using the `disposed` property.
 
-  * __source_fields__ - fields to retreive from elasticsearch
-    array of fields, defaults to all fields
+* __source_fields__ - fields to retreive from elasticsearch
+  array of fields, defaults to all fields
 
-  * __type__ - type of the elasticsearch data string, default: 'type'
+* __type__ - type of the elasticsearch data string, default: 'type'
 
 
 ## Functions:
