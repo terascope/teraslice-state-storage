@@ -6,15 +6,22 @@ for connection details and config object which is passed from the _op in the
 teraslice job.
 
 ## Intallation and Usage
+
 ### Installation
+
 > Installation TBD
+
 ### Usage
-`const StateStorage = require('teraslice-state-storage');`
-`const stateStorage = new StateStorage(context, config);`
-`stateStorage.count();`
-`stateStorage.mset(docArray);`
+
+```javascript
+const StateStorage = require('teraslice-state-storage');
+const stateStorage = new StateStorage(context, config);
+stateStorage.count();
+stateStorage.mset(docArray);
+```
 
 ## Configuration Options:
+
   * __cache_limit__ - max number of items to store in the cache (not memory
     size)
     positive integer, default: 1000000
@@ -54,6 +61,7 @@ teraslice job.
     string, default: 'key'
 
 ## Functions:
+
 * __get__ - expects an object with the `id_field` as a property and returns an
   object with an id and saved fields
   example: `get(doc)`
@@ -74,6 +82,6 @@ teraslice job.
   example: `mset(docArray)`
   example: `mset(docArray, true)` - saves the state in storage
 
-* count - returns the number docs currently saved in the cache
+* __count__ - returns the number docs currently saved in the cache
   example: `count()`
 
