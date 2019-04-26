@@ -26,17 +26,6 @@ stateStorage.mset(docArray);
     size)
     positive integer, default: 1000000
 
-  * __max_age__ - length of time before a record expires in milliseconds
-    positive integer, default: 24 hours
-
-  * __connection__ - elasticsearch connection
-    string, default: 'default'
-
-  * __index__ - name of elasticsearch index
-    string, default: 'index'
-
-  * __type__ - type of the elasticsearch data string, default: 'type'
-
   * __chunk_size__ - how many docs to send in the elasticsearch mget request at
     a time
     postitive integer, default is 2500
@@ -44,12 +33,18 @@ stateStorage.mset(docArray);
   * __concurrency__ - number of cuncurrent requests to elasticsearch
     positive integer, default: 100
 
-  * __source_fields__ - fields to retreive from elasticsearch
-    array of fields, defaults to all fields
+  * __connection__ - elasticsearch connection
+    string, default: 'default'
+
+  * __index__ - name of elasticsearch index
+    string, default: 'index'
 
   * __id_field__ - specifies the field to use as the key for caching and
     retrieving docs from elasticsearch
     string, default: 'id'
+
+  * __max_age__ - length of time before a record expires in milliseconds
+    positive integer, default: 24 hours
 
   * __persist__ - If set to true will save state in storage for mset, doest not
     apply to set.
@@ -60,7 +55,19 @@ stateStorage.mset(docArray);
     the id_field but not necessarily.
     string, default: 'key'
 
+  * __save_disposed__ - If set to `true`, records disposed from the cache will
+    saved for later access using the `disposed` property.
+
+  * __source_fields__ - fields to retreive from elasticsearch
+    array of fields, defaults to all fields
+
+  * __type__ - type of the elasticsearch data string, default: 'type'
+
+
 ## Functions:
+
+* __count__ - returns the number docs currently saved in the cache
+  example: `count()`
 
 * __get__ - expects an object with the `id_field` as a property and returns an
   object with an id and saved fields
@@ -82,6 +89,4 @@ stateStorage.mset(docArray);
   example: `mset(docArray)`
   example: `mset(docArray, true)` - saves the state in storage
 
-* __count__ - returns the number docs currently saved in the cache
-  example: `count()`
 
