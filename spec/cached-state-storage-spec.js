@@ -75,4 +75,40 @@ describe('lru cached state storage', () => {
         cache.mdelete(docArray);
         expect(cache.count()).toBe(0);
     });
+
+
+    describe('with save_disposed enabled ->', () => {
+        const newConfig = {
+            id_field: 'id',
+            cache_size: 100000,
+            save_disposed: 'true',
+        };
+
+        it('a deleted item should be in disposed', () => {
+            const cache = new CachedStateStorage(newConfig);
+            cache.set(doc);
+            cache.delete(doc);
+            expect(cache.disposed[0]).toBe(doc);
+        });
+
+        it('disposed should be cleared after each use', () => {
+            const cache = new CachedStateStorage(newConfig);
+            cache.set(doc);
+            cache.delete(doc);
+            expect(cache.disposed[0]).toBe(doc);
+            expect(cache.disposed.length).toBe(0);
+        });
+
+        it('multiple deleted items should be found in disposed', () => {
+            const cache = new CachedStateStorage(newConfig);
+            cache.set(doc);
+            cache.delete(doc);
+            cache.set(doc);
+            cache.delete(doc);
+            const { disposed } = cache;
+            expect(disposed).toEqual([doc, doc]);
+            expect(disposed.length).toBe(2);
+            expect(cache.disposed.length).toBe(0);
+        });
+    });
 });

@@ -56,7 +56,9 @@ stateStorage.mset(docArray);
   string, default: 'key'
 
 * __save_disposed__ - If set to `true`, records disposed from the cache will
-  saved for later access using the `disposed` property.
+  saved for later access using the `disposed` property.  You **MUST** access
+  `disposed` to periodically clear the disposed list, otherwise it will grow
+  unbounded.
 
 * __source_fields__ - fields to retreive from elasticsearch
   array of fields, defaults to all fields
@@ -90,3 +92,6 @@ stateStorage.mset(docArray);
   example: `mset(docArray, true)` - saves the state in storage
 
 
+## Properties
+
+* __disposed__ - Array of records disposed from the cache.
