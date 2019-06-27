@@ -9,7 +9,7 @@
   "author": "ciorg",
   "license": "MIT",
   "dependencies": {
-    "@terascope/elasticsearch-api": "^2.0.1",
+    "@terascope/elasticsearch-api": "^2.0.3",
     "bluebird": "^3.5.1",
     "lodash": "^4.17.10",
     "lru-cache": "^5.1.1"
